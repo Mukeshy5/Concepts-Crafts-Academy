@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Icon from '../components/Icon'
-import { QRPlaceholder } from '../components/Home'
+import { QRCode } from '../components/Home'
 import { academyInfo, programs } from '../data/academy'
 
 const initialForm = {
@@ -37,7 +37,7 @@ const RequestQuote = () => {
             </p>
           </div>
           <div className="enroll-side-panel reveal reveal-delay-1">
-            <QRPlaceholder />
+            <QRCode />
             <h2>Scan to Enroll Now</h2>
             <p>{academyInfo.phoneDisplay}</p>
           </div>

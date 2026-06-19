@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import qrEnrolled from '../assets/QREnrolled.png'
 import {
   academyInfo,
   benefits,
@@ -18,14 +19,13 @@ const SectionHeading = ({ eyebrow, title, text }) => (
   </div>
 )
 
-const QRPlaceholder = () => (
-  <div className="qr-placeholder" aria-label="QR code placeholder">
-    <div />
-    <span />
-    <span />
-    <span />
-    <small>QR</small>
-  </div>
+const QRCode = () => (
+  <img
+    className="qr-image"
+    src={qrEnrolled}
+    alt="Scan QR to enroll at Concepts & Crafts Academy"
+    loading="lazy"
+  />
 )
 
 const Home = () => {
@@ -202,7 +202,7 @@ const Home = () => {
               </div>
             </div>
             <div className="qr-area">
-              <QRPlaceholder />
+              <QRCode />
               <Link className="btn btn-primary" to="/enroll">
                 Scan to Enroll Now
                 <Icon name="scan" size={19} />
@@ -215,5 +215,5 @@ const Home = () => {
   )
 }
 
-export { QRPlaceholder, SectionHeading }
+export { QRCode, SectionHeading }
 export default Home

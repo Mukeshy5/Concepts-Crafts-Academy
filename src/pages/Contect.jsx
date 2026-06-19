@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
-import { QRPlaceholder } from '../components/Home'
+import { QRCode } from '../components/Home'
 import { academyInfo } from '../data/academy'
 
 const Contect = () => {
@@ -68,7 +68,7 @@ const Contect = () => {
           </div>
 
           <div className="enroll-side-panel reveal reveal-delay-1">
-            <QRPlaceholder />
+            <QRCode />
             <h2>Scan to Enroll Now</h2>
             <p>
               Quick enrollment support is available for online and offline
