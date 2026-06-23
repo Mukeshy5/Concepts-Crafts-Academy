@@ -10,15 +10,15 @@ const Contect = () => {
         <div className="section-shell page-hero-grid">
           <div className="reveal">
             <span className="eyebrow">Contact</span>
-            <h1>Speak with Concepts & Crafts Academy</h1>
+            <h1>Let&apos;s build your child&apos;s future together</h1>
             <p>
-              Connect for enrollment details, class mode, subject support, and a
-              learning plan for your child.
+              Whether your child needs academic support, confidence building, or
+              a structured learning environment, we are here to help.
             </p>
           </div>
           <div className="contact-mini-card reveal reveal-delay-1">
             <Icon name="phone" size={32} />
-            <span>Phone Number</span>
+            <span>Call / WhatsApp</span>
             <a href={`tel:${academyInfo.phone}`}>{academyInfo.phoneDisplay}</a>
           </div>
         </div>
@@ -44,6 +44,13 @@ const Contect = () => {
               </div>
             </div>
             <div className="contact-line">
+              <Icon name="monitor" />
+              <div>
+                <span>Programs</span>
+                <p>Offline & Online Programs Available</p>
+              </div>
+            </div>
+            <div className="contact-line">
               <Icon name="mapPin" />
               <div>
                 <span>Address</span>
@@ -51,17 +58,12 @@ const Contect = () => {
               </div>
             </div>
             <div className="contact-actions">
-              <a
-                className="btn btn-primary"
-                href={academyInfo.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp
-                <Icon name="whatsapp" size={20} />
-              </a>
+              <Link className="btn btn-primary" to="/enroll">
+                Schedule a Free Assessment Session
+                <Icon name="scan" size={20} />
+              </Link>
               <a className="btn btn-secondary" href={`tel:${academyInfo.phone}`}>
-                Call Button
+                Call Now
                 <Icon name="phone" size={20} />
               </a>
             </div>
@@ -86,10 +88,10 @@ const Contect = () => {
         <div className="section-shell map-panel reveal">
           <div>
             <span className="eyebrow">Visit Us</span>
-            <h2>A5/607 Tulip Lemon, Sector 69, Gurugram</h2>
+            <h2>{academyInfo.address}</h2>
             <p>
               Offline classes and parent discussions are available at the
-              academy address.
+              academy address. Online learning options are also available.
             </p>
           </div>
           <div className="map-placeholder" aria-label="Academy location map">

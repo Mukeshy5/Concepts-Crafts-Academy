@@ -1,7 +1,13 @@
 import logo from '../assets/logo.png'
 import Icon from '../components/Icon'
 import { SectionHeading } from '../components/Home'
-import { academyInfo, benefits, programs, whyChooseUs } from '../data/academy'
+import {
+  academyInfo,
+  approachSteps,
+  excellencePillars,
+  missionVision,
+  whyChooseUs,
+} from '../data/academy'
 
 const AboutUs = () => {
   return (
@@ -10,10 +16,11 @@ const AboutUs = () => {
         <div className="section-shell page-hero-grid">
           <div className="reveal">
             <span className="eyebrow">About Us</span>
-            <h1>Concept-focused after-school learning for confident results</h1>
+            <h1>Education that prepares students for exams and for life</h1>
             <p>
-              {academyInfo.name} helps students build strong concepts, better
-              study discipline, and the confidence to perform well in school.
+              {academyInfo.name} combines academic guidance with essential
+              future-ready skills so students grow as confident, curious, and
+              disciplined learners.
             </p>
           </div>
           <div className="page-hero-logo reveal reveal-delay-1">
@@ -25,38 +32,26 @@ const AboutUs = () => {
       <section className="page-section">
         <div className="section-shell split-layout">
           <div className="story-block reveal">
-            <span className="eyebrow">Our Approach</span>
-            <h2>Clear teaching, regular practice, visible progress</h2>
+            <span className="eyebrow">Our Belief</span>
+            <h2>We do not simply teach subjects. We mentor students.</h2>
             <p>
-              The academy is designed for parents who want reliable academic
-              support after school without overwhelming the child. Each learner
-              gets topic-wise explanation, worksheet practice, revision, and
-              guidance for school assessments.
+              Most students spend years studying but never learn how to think
+              independently, solve problems confidently, or communicate
+              effectively.
             </p>
             <p>
-              Classes are available online and offline, with programs for early
-              learners, primary classes, secondary science and English, and
-              senior secondary Biology and Chemistry.
+              At {academyInfo.name}, education is designed to build academic
+              strength, personal growth, communication, and confidence.
             </p>
           </div>
 
-          <div className="metric-grid reveal reveal-delay-1">
-            <div>
-              <strong>UKG-12</strong>
-              <span>Academic levels</span>
-            </div>
-            <div>
-              <strong>5+</strong>
-              <span>Global regions</span>
-            </div>
-            <div>
-              <strong>Online</strong>
-              <span>Flexible access</span>
-            </div>
-            <div>
-              <strong>Offline</strong>
-              <span>Gurugram classes</span>
-            </div>
+          <div className="info-grid reveal reveal-delay-1">
+            {missionVision.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -64,24 +59,22 @@ const AboutUs = () => {
       <section className="page-section tinted-section">
         <div className="section-shell">
           <SectionHeading
-            eyebrow="Learning Promise"
-            title="Everything is built around stronger fundamentals"
-            text="Students are guided through concepts, practice, assessment, and feedback with a structured routine."
+            eyebrow="Why Parents Choose Us"
+            title="Personalized learning with regular progress tracking"
+            text="Parents choose us for concept-based teaching, mentorship, small group learning, and confidence-building activities."
           />
-          <div className="why-timeline compact-timeline">
+          <div className="feature-grid">
             {whyChooseUs.map((item, index) => (
               <article
-                className="why-card reveal"
+                className="feature-card reveal"
                 key={item.title}
-                style={{ '--delay': `${index * 90}ms` }}
+                style={{ '--delay': `${index * 70}ms` }}
               >
-                <div className="timeline-dot">
-                  <Icon name={item.icon} size={24} />
+                <div className="card-icon">
+                  <Icon name={item.icon} size={28} />
                 </div>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </article>
             ))}
           </div>
@@ -91,37 +84,46 @@ const AboutUs = () => {
       <section className="page-section">
         <div className="section-shell">
           <SectionHeading
-            eyebrow="Programs"
-            title="Learning support from early years to board classes"
-            text="Each program is designed with age-appropriate teaching methods and practice material."
+            eyebrow="Excellence Framework"
+            title="The 5 pillars of student success"
+            text="Our framework balances academic mastery with thinking, communication, creativity, character, and confidence."
           />
-          <div className="program-grid">
-            {programs.map((program, index) => (
+          <div className="pillar-grid">
+            {excellencePillars.map((pillar, index) => (
               <article
-                className="program-card reveal"
-                key={program.title}
-                style={{ '--delay': `${index * 70}ms` }}
+                className="pillar-card reveal"
+                key={pillar.title}
+                style={{ '--delay': `${index * 80}ms` }}
               >
-                <div className="card-icon">
-                  <Icon name={program.icon} size={30} />
-                </div>
-                <span>{program.subtitle}</span>
-                <h3>{program.title}</h3>
-                <p>{program.description}</p>
+                <Icon name={pillar.icon} size={30} />
+                <h3>{pillar.title}</h3>
+                <p>{pillar.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="benefits-band inner-benefits">
-        <div className="section-shell benefits-row">
-          {benefits.map((benefit) => (
-            <div className="benefit-badge reveal" key={benefit}>
-              <Icon name="check" size={18} />
-              <span>{benefit}</span>
-            </div>
-          ))}
+      <section className="page-section tinted-section">
+        <div className="section-shell">
+          <SectionHeading
+            eyebrow="Learning Method"
+            title="How learning happens at Concepts & Crafts"
+            text="Students are assessed, guided through a personalized plan, taught interactively, and reviewed regularly."
+          />
+          <div className="steps-grid">
+            {approachSteps.map((step, index) => (
+              <article
+                className="step-card reveal"
+                key={step.title}
+                style={{ '--delay': `${index * 80}ms` }}
+              >
+                <strong>{String(index + 1).padStart(2, '0')}</strong>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </main>

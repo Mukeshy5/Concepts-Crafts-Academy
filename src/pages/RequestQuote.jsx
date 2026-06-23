@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Icon from '../components/Icon'
 import { QRCode } from '../components/Home'
-import { academyInfo, programs } from '../data/academy'
+import { academyInfo, approachSteps, programs } from '../data/academy'
 
 const initialForm = {
   parentName: '',
@@ -20,7 +20,7 @@ const RequestQuote = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const message = `Hello Concepts & Crafts Academy, I want to enroll. Parent Name: ${form.parentName || 'Not shared'}, Phone: ${form.phone || 'Not shared'}, Student Class: ${form.studentClass || 'Not shared'}, Program: ${form.program}.`
+    const message = `Hello Concepts & Crafts Academy, I want to schedule a free assessment session. Parent Name: ${form.parentName || 'Not shared'}, Phone: ${form.phone || 'Not shared'}, Student Class: ${form.studentClass || 'Not shared'}, Program: ${form.program}.`
     window.open(`${academyInfo.whatsapp}?text=${encodeURIComponent(message)}`, '_blank')
   }
 
@@ -29,11 +29,11 @@ const RequestQuote = () => {
       <section className="page-hero enroll-hero">
         <div className="section-shell page-hero-grid">
           <div className="reveal">
-            <span className="eyebrow">Enrollment</span>
-            <h1>Start your child&apos;s after-school excellence program</h1>
+            <span className="eyebrow">Free Assessment</span>
+            <h1>Schedule a free assessment session</h1>
             <p>
-              Share basic details and connect directly with the academy on
-              WhatsApp for class availability and next steps.
+              We begin by understanding each student&apos;s strengths,
+              weaknesses, learning style, and academic goals.
             </p>
           </div>
           <div className="enroll-side-panel reveal reveal-delay-1">
@@ -76,7 +76,7 @@ const RequestQuote = () => {
                 type="text"
                 value={form.studentClass}
                 onChange={updateField}
-                placeholder="Example: Class 8"
+                placeholder="Example: Grade 8"
               />
             </label>
 
@@ -85,7 +85,7 @@ const RequestQuote = () => {
               <select name="program" value={form.program} onChange={updateField}>
                 {programs.map((program) => (
                   <option key={program.title} value={program.title}>
-                    {program.title}
+                    {program.title} ({program.subtitle})
                   </option>
                 ))}
               </select>
@@ -98,21 +98,15 @@ const RequestQuote = () => {
           </form>
 
           <div className="steps-panel reveal reveal-delay-1">
-            <span className="eyebrow">Admission Flow</span>
-            <h2>Simple enrollment process</h2>
+            <span className="eyebrow">Learning Flow</span>
+            <h2>How the program begins</h2>
             <div className="step-list">
-              <div>
-                <strong>01</strong>
-                <span>Share student class and subject requirement</span>
-              </div>
-              <div>
-                <strong>02</strong>
-                <span>Discuss online or offline class preference</span>
-              </div>
-              <div>
-                <strong>03</strong>
-                <span>Begin with concept mapping and worksheet practice</span>
-              </div>
+              {approachSteps.slice(0, 3).map((step, index) => (
+                <div key={step.title}>
+                  <strong>{String(index + 1).padStart(2, '0')}</strong>
+                  <span>{step.description}</span>
+                </div>
+              ))}
             </div>
             <a className="btn btn-secondary" href={`tel:${academyInfo.phone}`}>
               Call {academyInfo.phoneDisplay}

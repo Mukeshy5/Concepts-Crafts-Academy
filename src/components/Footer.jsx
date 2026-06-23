@@ -36,7 +36,10 @@ const Footer = () => {
 
         <div className="footer-column">
           <h2>Quick Links</h2>
-          <Link to="/about">About Us</Link>
+          <Link to="/#about">About Us</Link>
+          <Link to="/#approach">Approach</Link>
+          <Link to="/#parents">Parents</Link>
+          <Link to="/#faq">FAQ</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/enroll">Enroll</Link>
           <Link to="/terms">Terms</Link>

@@ -39,7 +39,9 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 className={`nav-link ${
-                  pathname === '/' && hash === '#programs' ? 'active' : ''
+                  pathname === '/' && hash === link.to.slice(link.to.indexOf('#'))
+                    ? 'active'
+                    : ''
                 }`}
                 to={link.to}
                 onClick={closeMenu}

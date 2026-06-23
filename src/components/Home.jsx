@@ -3,10 +3,15 @@ import logo from '../assets/logo.png'
 import qrEnrolled from '../assets/QREnrolled.png'
 import {
   academyInfo,
+  approachSteps,
   benefits,
-  countries,
+  excellencePillars,
+  faqs,
   heroHighlights,
+  missionVision,
+  parentUpdates,
   programs,
+  programsIntro,
   whyChooseUs,
 } from '../data/academy'
 import Icon from './Icon'
@@ -28,6 +33,17 @@ const QRCode = () => (
   />
 )
 
+const CheckList = ({ items }) => (
+  <ul className="check-list">
+    {items.map((item) => (
+      <li key={item}>
+        <Icon name="check" size={16} />
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+)
+
 const Home = () => {
   return (
     <main>
@@ -36,7 +52,15 @@ const Home = () => {
           <div className="hero-copy reveal">
             <span className="eyebrow hero-eyebrow">{academyInfo.program}</span>
             <h1>{academyInfo.headline}</h1>
-            <p>{academyInfo.tagline}</p>
+            <p>
+              Most students spend years studying but never learn how to think
+              independently, solve problems confidently, or communicate
+              effectively.
+            </p>
+            <p>
+              At {academyInfo.name}, education prepares students not only for
+              exams but also for life.
+            </p>
 
             <div className="hero-highlights">
               {heroHighlights.map((item) => (
@@ -49,8 +73,8 @@ const Home = () => {
 
             <div className="hero-actions">
               <Link className="btn btn-primary" to="/enroll">
-                Scan to Enroll Now
-                <Icon name="scan" size={20} />
+                Schedule a Free Assessment
+                <Icon name="arrowRight" size={20} />
               </Link>
               <a className="btn btn-secondary" href={`tel:${academyInfo.phone}`}>
                 Call {academyInfo.phoneDisplay}
@@ -69,13 +93,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="benefits-band" aria-label="Academy benefits">
+      <section className="benefits-band" aria-label="Academy excellence pillars">
         <div className="section-shell benefits-row">
           {benefits.map((benefit, index) => (
             <div
               className="benefit-badge reveal"
               key={benefit}
-              style={{ '--delay': `${index * 90}ms` }}
+              style={{ '--delay': `${index * 80}ms` }}
             >
               <Icon name="check" size={18} />
               <span>{benefit}</span>
@@ -84,27 +108,23 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="page-section" id="programs">
-        <div className="section-shell">
-          <SectionHeading
-            eyebrow="Programs Offered"
-            title="Age-wise support for every learning stage"
-            text="Focused after-school coaching with strong fundamentals, guided practice, and regular revision."
-          />
+      <section className="page-section" id="about">
+        <div className="section-shell split-layout">
+          <div className="story-block reveal">
+            <span className="eyebrow">More Than Subject Teaching</span>
+            <h2>We do not simply teach subjects. We mentor students.</h2>
+            <p>
+              Our After-School Excellence Program combines academic guidance
+              with essential future-ready skills, helping students become
+              confident, curious, disciplined, and successful learners.
+            </p>
+          </div>
 
-          <div className="program-grid">
-            {programs.map((program, index) => (
-              <article
-                className="program-card reveal"
-                key={program.title}
-                style={{ '--delay': `${index * 80}ms` }}
-              >
-                <div className="card-icon">
-                  <Icon name={program.icon} size={30} />
-                </div>
-                <span>{program.subtitle}</span>
-                <h3>{program.title}</h3>
-                <p>{program.description}</p>
+          <div className="info-grid reveal reveal-delay-1">
+            {missionVision.map((item) => (
+              <article className="info-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>
@@ -114,47 +134,148 @@ const Home = () => {
       <section className="page-section tinted-section" id="why-us">
         <div className="section-shell">
           <SectionHeading
-            eyebrow="Why Choose Us"
-            title="A disciplined system for confident learners"
-            text="Each class is planned around concept clarity, consistent practice, and mentor-led progress."
+            eyebrow="Why Parents Choose Us"
+            title="More than a tuition centre"
+            text="Every student receives guidance for academics, learning habits, confidence, and personal growth."
           />
 
-          <div className="why-timeline">
+          <div className="feature-grid">
             {whyChooseUs.map((item, index) => (
               <article
-                className="why-card reveal"
+                className="feature-card reveal"
                 key={item.title}
-                style={{ '--delay': `${index * 100}ms` }}
+                style={{ '--delay': `${index * 70}ms` }}
               >
-                <div className="timeline-dot">
-                  <Icon name={item.icon} size={24} />
+                <div className="card-icon">
+                  <Icon name={item.icon} size={28} />
                 </div>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="global-section">
-        <div className="section-shell global-panel reveal">
-          <div>
-            <span className="eyebrow">Global Reach</span>
-            <h2>Now Teaching Students Across:</h2>
-          </div>
-          <div className="flag-row">
-            {countries.map((country, index) => (
-              <div
-                className="flag-card"
-                key={country.name}
-                style={{ '--delay': `${index * 120}ms` }}
+      <section className="page-section">
+        <div className="section-shell">
+          <SectionHeading
+            eyebrow="Our Excellence Framework"
+            title="The 5 pillars of student success"
+            text="A balanced framework that develops academic strength, thinking skills, expression, creativity, and confidence."
+          />
+
+          <div className="pillar-grid">
+            {excellencePillars.map((pillar, index) => (
+              <article
+                className="pillar-card reveal"
+                key={pillar.title}
+                style={{ '--delay': `${index * 80}ms` }}
               >
-                <span aria-hidden="true">{country.flag}</span>
-                <strong>{country.name}</strong>
-              </div>
+                <Icon name={pillar.icon} size={30} />
+                <h3>{pillar.title}</h3>
+                <p>{pillar.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section tinted-section" id="programs">
+        <div className="section-shell">
+          <SectionHeading
+            eyebrow="Programs"
+            title={programsIntro.title}
+            text={programsIntro.text}
+          />
+
+          <div className="program-grid detailed-program-grid">
+            {programs.map((program, index) => (
+              <article
+                className="program-card detailed-program-card reveal"
+                key={program.title}
+                style={{ '--delay': `${index * 70}ms` }}
+              >
+                <div className="card-icon">
+                  <Icon name={program.icon} size={30} />
+                </div>
+                <span>{program.subtitle}</span>
+                <h3>{program.title}</h3>
+                <p>{program.description}</p>
+                <h4>Focus Areas</h4>
+                <CheckList items={program.focusAreas} />
+                <p className="outcome-text">
+                  <strong>Outcome:</strong> {program.outcome}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section" id="approach">
+        <div className="section-shell">
+          <SectionHeading
+            eyebrow="Our Approach"
+            title="How learning happens at Concepts & Crafts"
+            text="Each student moves through assessment, planning, interactive learning, practice, and progress tracking."
+          />
+
+          <div className="steps-grid">
+            {approachSteps.map((step, index) => (
+              <article
+                className="step-card reveal"
+                key={step.title}
+                style={{ '--delay': `${index * 80}ms` }}
+              >
+                <strong>{String(index + 1).padStart(2, '0')}</strong>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section tinted-section" id="parents">
+        <div className="section-shell split-layout">
+          <div className="story-block reveal">
+            <span className="eyebrow">Parents</span>
+            <h2>A partnership for your child&apos;s success</h2>
+            <p>
+              We believe parents play a crucial role in a child&apos;s
+              educational journey. That&apos;s why we maintain regular
+              communication regarding progress, goals, assessments, strengths,
+              and improvement areas. Together, we create the best possible
+              learning environment for every student.
+            </p>
+          </div>
+
+          <div className="parents-panel reveal reveal-delay-1">
+            <h3>Regular communication includes</h3>
+            <CheckList items={parentUpdates} />
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section" id="faq">
+        <div className="section-shell">
+          <SectionHeading
+            eyebrow="FAQ"
+            title="Questions parents often ask"
+            text="Clear answers about our program model, grades, curriculum, class modes, assessment, and mentoring."
+          />
+
+          <div className="faq-grid">
+            {faqs.map((item, index) => (
+              <article
+                className="faq-card reveal"
+                key={item.question}
+                style={{ '--delay': `${index * 70}ms` }}
+              >
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -164,24 +285,24 @@ const Home = () => {
         <div className="section-shell contact-grid">
           <div className="contact-copy reveal">
             <span className="eyebrow">Contact</span>
-            <h2>Start with a focused learning plan</h2>
+            <h2>Let&apos;s build your child&apos;s future together</h2>
             <p>
-              Connect with the academy for online and offline classes, program
-              details, and enrollment support.
+              Whether your child needs academic support, confidence building, or
+              a structured learning environment, we are here to help.
             </p>
             <div className="contact-actions">
+              <Link className="btn btn-primary" to="/enroll">
+                Schedule a Free Assessment Session
+                <Icon name="scan" size={20} />
+              </Link>
               <a
-                className="btn btn-primary"
+                className="btn btn-secondary"
                 href={academyInfo.whatsapp}
                 target="_blank"
                 rel="noreferrer"
               >
-                WhatsApp
+                Call / WhatsApp
                 <Icon name="whatsapp" size={20} />
-              </a>
-              <a className="btn btn-secondary" href={`tel:${academyInfo.phone}`}>
-                Call Now
-                <Icon name="phone" size={20} />
               </a>
             </div>
           </div>
@@ -190,8 +311,15 @@ const Home = () => {
             <div className="contact-line">
               <Icon name="phone" />
               <div>
-                <span>Phone Number</span>
+                <span>Call / WhatsApp</span>
                 <a href={`tel:${academyInfo.phone}`}>{academyInfo.phoneDisplay}</a>
+              </div>
+            </div>
+            <div className="contact-line">
+              <Icon name="monitor" />
+              <div>
+                <span>Class Mode</span>
+                <p>Offline & Online Programs Available</p>
               </div>
             </div>
             <div className="contact-line">
