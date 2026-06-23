@@ -13,10 +13,11 @@ export const academyInfo = {
 
 export const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Programs', to: '/#programs' },
+  { label: 'Programs', to: '/programs' },
   { label: 'Approach', to: '/#approach' },
   { label: 'Parents', to: '/#parents' },
   { label: 'FAQ', to: '/#faq' },
+  { label: 'News', to: '/news' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -215,6 +216,38 @@ export const programs = [
   },
 ]
 
+export const internationalProgram = {
+  title: 'International Online Learning Program',
+  subtitle: 'Teaching 20+ students across Dubai, Singapore, Australia, USA, Canada, etc.',
+  description:
+    'Live online academic support for international learners with concept clarity, regular practice, communication skills, and personalized mentoring.',
+  locations: ['Dubai', 'Singapore', 'Australia', 'USA', 'Canada'],
+  subjects: [
+    'English (Reading, Writing, Speaking, Language Arts)',
+    'Maths',
+    'Hindi',
+    'Science',
+  ],
+}
+
+export const programSupport = {
+  title: 'Personalized Mentorship & Subject Support',
+  description:
+    'A focused support section for students who need stronger concepts, regular practice, better communication, or a customized learning path.',
+  highlights: [
+    'One-to-one mentoring for learning gaps',
+    'Small group learning for individual attention',
+    'Weekly worksheets, revision, and assessments',
+    'Parent feedback on strengths and improvement areas',
+  ],
+  subjects: [
+    'English Reading, Writing, Speaking & Language Arts',
+    'Maths',
+    'Hindi',
+    'Science',
+  ],
+}
+
 export const approachSteps = [
   {
     title: 'Student Assessment',
@@ -285,6 +318,29 @@ export const benefits = [
   'Communication',
   'Creativity',
   'Character & Confidence',
+]
+
+export const educationUpdates = [
+  {
+    category: 'Academy Update',
+    title: 'International Online Learning Support',
+    text: 'Concepts & Crafts Academy is teaching 20+ students across Dubai, Singapore, Australia, USA, Canada, and more through online learning support.',
+  },
+  {
+    category: 'Learning Focus',
+    title: 'English Language Arts Support',
+    text: 'Students receive guided support in reading, writing, speaking, and Language Arts to build expression and confidence.',
+  },
+  {
+    category: 'Academic Practice',
+    title: 'Maths, Hindi, and Science Practice',
+    text: 'Regular practice, doubt resolution, worksheets, and revision support help students stay consistent across core subjects.',
+  },
+  {
+    category: 'Parents',
+    title: 'Regular Progress Communication',
+    text: 'Parents receive updates on learning goals, assessment performance, strengths, and areas that need improvement.',
+  },
 ]
 
 export const socials = [

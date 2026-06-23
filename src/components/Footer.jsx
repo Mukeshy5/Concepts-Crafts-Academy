@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="footer-column">
           <h2>Programs</h2>
           {programs.slice(0, 4).map((program) => (
-            <Link key={program.title} to="/#programs">
+            <Link key={program.title} to="/programs">
               {program.title}
             </Link>
           ))}
@@ -40,6 +40,7 @@ const Footer = () => {
           <Link to="/#approach">Approach</Link>
           <Link to="/#parents">Parents</Link>
           <Link to="/#faq">FAQ</Link>
+          <Link to="/news">Latest Updates & News</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/enroll">Enroll</Link>
           <Link to="/terms">Terms</Link>

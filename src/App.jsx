@@ -2,8 +2,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
+import RatingWidget from './components/RatingWidget'
 import AboutUs from './pages/AboutUs'
 import Contect from './pages/Contect'
+import News from './pages/News'
+import Programs from './pages/Programs'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RequestQuote from './pages/RequestQuote'
 import Terms from './pages/Terms'
@@ -18,12 +21,15 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="/contact" element={<Contect />} />
           <Route path="/enroll" element={<RequestQuote />} />
+          <Route path="/news" element={<News />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<Home />} />
         </Routes>
+        <RatingWidget />
         <Footer />
       </div>
     </BrowserRouter>

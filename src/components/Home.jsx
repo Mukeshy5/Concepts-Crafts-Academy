@@ -8,6 +8,7 @@ import {
   excellencePillars,
   faqs,
   heroHighlights,
+  internationalProgram,
   missionVision,
   parentUpdates,
   programs,
@@ -189,6 +190,13 @@ const Home = () => {
             text={programsIntro.text}
           />
 
+          <div className="section-actions reveal">
+            <Link className="btn btn-secondary" to="/programs">
+              View Complete Programs Page
+              <Icon name="arrowRight" size={19} />
+            </Link>
+          </div>
+
           <div className="program-grid detailed-program-grid">
             {programs.map((program, index) => (
               <article
@@ -210,6 +218,35 @@ const Home = () => {
               </article>
             ))}
           </div>
+
+          <article className="international-card reveal reveal-delay-1">
+            <div>
+              <span className="eyebrow">International Program</span>
+              <h3>{internationalProgram.title}</h3>
+              <p>{internationalProgram.subtitle}</p>
+              <p>{internationalProgram.description}</p>
+            </div>
+
+            <div className="international-details">
+              <div>
+                <strong>Teaching Across</strong>
+                <div className="tag-row">
+                  {internationalProgram.locations.map((location) => (
+                    <span key={location}>{location}</span>
+                  ))}
+                  <span>Etc</span>
+                </div>
+              </div>
+              <div>
+                <strong>Subjects</strong>
+                <ul className="subject-list">
+                  {internationalProgram.subjects.map((subject) => (
+                    <li key={subject}>{subject}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
