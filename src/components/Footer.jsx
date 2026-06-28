@@ -43,6 +43,7 @@ const Footer = () => {
           <Link to="/news">Latest Updates & News</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/enroll">Enroll</Link>
+          <Link to="/developer">Developer</Link>
           <Link to="/terms">Terms</Link>
           <Link to="/privacy-policy">Privacy Policy</Link>
         </div>

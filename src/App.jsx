@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import RatingWidget from './components/RatingWidget'
 import AboutUs from './pages/AboutUs'
 import Contect from './pages/Contect'
+import Developer from './pages/Developer'
 import News from './pages/News'
 import Programs from './pages/Programs'
 import PrivacyPolicy from './pages/PrivacyPolicy'
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/contact" element={<Contect />} />
           <Route path="/enroll" element={<RequestQuote />} />
           <Route path="/news" element={<News />} />
+          <Route path="/developer" element={<Developer />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<Home />} />
